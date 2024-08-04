@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kieran Hennity Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="select-container">
+        <label for="Theme" class="theme-label">Theme:</label>
+        <select name="Theme" class="theme-swap">
+            <option value="KC" selected>Kieran's Choice</option>
+            <option value="Light">Light Mode</option>
+            <option value="Dark">Dark Mode</option>
+        </select>
+        </div>
+    </div>
+    <div class="container">
+        <div class="shapes">
+            <div class="circle"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+        <div class="card">
+            <div class="card-image">
+                <img src="CatOrangeEgg.png" alt="Profile Picture">
+            </div>
+            <div class="card-text">
+                <h2>Kieran Hennity</h2>
+                <br>
+                <p>Hello, and welcome to my portfolio site.
+                <br>
+                I have just graduated from Liverpool Hope University with a First Class degree in Computer Science.
+                <br>
+                My main interests are in web development and software development.</p>
+            </div>
+        </div>
+    <div id="gallery">
+        <div id="project-sidebar">
+            <div class="project-preview" data-project="1">
+                <img src="images/Project1.jpg" alt="Project 1">
+                <h2>Project 1</h2>
+            </div>
+            <div class="project-preview" data-project="1">
+                <img src="images/Project1.jpg" alt="Project 1">
+                <h2>Project 1</h2>
+            </div>
+            <div class="project-preview" data-project="1">
+                <img src="images/Project1.jpg" alt="Project 1">
+                <h2>Project 1</h2>
+            </div>
+            <!-- Add more project previews as needed -->
+        </div>
+        <div id="project-expanded">
+            <div class="project" id="project-1">
+                <button class="close-p-expanded" id="close-p-expanded">X</button>
+                <div class="project-image">
+                    <img src="images/Project1.jpg" alt="Project 1">
+                </div>
+                <div class="project-text">
+                    <h2>Project 1</h2>
+                    <p>This is a project I worked on during my time at university. It is a web application that allows users to search for and view information about films.</p>
+                    <p>It was built using HTML, CSS, JavaScript, PHP and MySQL.</p>
+                </div>
+            </div>
+            <!-- Add more expanded project details as needed -->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

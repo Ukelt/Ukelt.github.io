@@ -1,0 +1,307 @@
+:root {
+    --primary-color: #9bfcf7;
+    --secondary-color: #f889c6;
+    --font-color: #030000;
+    --bg-color: #fff;
+    --heading-color: #292922;
+}
+
+[data-theme="Dark"] {
+    --primary-color: #343439;
+    --secondary-color: #606062;
+    --font-color: #e1e1ff;
+    --bg-color: #141421;
+    --heading-color: #818cab;
+}
+
+[data-theme="Light"] {
+    --primary-color: #f0f0f5;
+    --secondary-color: #c0c0c0;
+    --font-color: #1a1a1a;
+    --bg-color: #ffffff;
+    --heading-color: #333333;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    margin: 0;
+    font-size: 18px;
+}
+
+.top-bar {
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    padding: 1rem;
+}
+
+.theme-swap {
+    border: none;
+    background-color: transparent;
+    color: var(--font-color);
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.theme-swap:hover {
+    color: var(--secondary-color);
+}
+
+/* Basic styles for positioning and appearance */
+.select-container {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  .theme-swap {
+    position: relative;
+    display: inline-block;
+    padding: 10px;
+  }
+  
+  /* Pseudo-elements for the box */
+  .theme-swap::before,
+  .theme-swap::after {
+    content: '';
+    position: absolute;
+    background: black;
+    transition: all 0.4s ease;
+  }
+  
+  /* Top line */
+  .theme-swap::before {
+    height: 2px;
+    width: 0;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Bottom line */
+  .theme-swap::after {
+    height: 2px;
+    width: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  /* Left and right lines */
+  .theme-swap::before,
+  .theme-swap::after {
+    transition: all 0.4s ease;
+  }
+  
+  .theme-swap::before {
+    transition: width 0.4s ease;
+  }
+  
+  .theme-swap::after {
+    transition: width 0.4s ease;
+  }
+  
+  /* Draw box effect on hover */
+  .select-container:hover .theme-swap::before {
+    width: 100%;
+    transition: width 0.4s ease;
+  }
+  
+  .select-container:hover .theme-swap::after {
+    width: 100%;
+    transition: width 0.4s ease;
+  }
+  
+  .select-container:hover .theme-swap::before {
+    width: 100%;
+    height: 2px;
+    transition: width 0.4s ease;
+  }
+  
+  .select-container:hover .theme-swap::after {
+    width: 2px;
+    height: 100%;
+    transition: height 0.4s ease 0.4s;
+  }
+  
+  .select-container:hover .theme-swap::after {
+    height: 2px;
+    width: 100%;
+    transition: height 0.4s ease 0.8s;
+  }
+  
+  .select-container:hover .theme-swap::before {
+    height: 2px;
+    width: 100%;
+    transition: height 0.4s ease 0.8s;
+  }
+  
+  /* Adjustments for the left and right lines */
+  .theme-swap::after {
+    height: 0;
+    width: 2px;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .theme-swap::before {
+    height: 0;
+    width: 2px;
+    top: 0;
+    left: 0;
+  }
+  
+  
+  
+  
+  
+  
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Align items at the top */
+    margin: 25px;
+}
+
+.circle {
+    position: absolute;
+    width: 35%;
+    height: 70%;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    margin-right: 45px;
+    z-index: -1;
+    top: 38%;
+}
+
+.circle3 {
+    position: absolute;
+    width: 20%;
+    height: 40%;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    margin-left: 30%;
+    z-index: -2;
+    top: 65%;
+
+}
+
+/*
+@keyframes moveInCircle {
+    0% {
+        transform: translate(0, 0) rotate(0deg) translate(50px) rotate(0deg);
+    }
+    100% {
+        transform: translate(0, 0) rotate(360deg) translate(50px) rotate(-360deg);
+    }
+}*/
+
+.circle {
+    animation: moveInCircle 5s linear infinite;
+}
+
+.circle3 {
+    animation: moveInCircle 5s linear infinite reverse;
+}
+
+
+
+.card {
+    width: 100%;
+    font-size: small;
+    margin-left: 40px;
+    transition: width 0.5s ease;
+    margin-top: 50px;
+}
+
+.card-image img {
+    border-radius: 100px;
+    border: 20px solid var(--secondary-color);
+}
+
+#gallery {
+    display: flex;
+    width: 100%;
+    margin-top: 50px;
+    position: relative;
+    /* Ensure proper positioning context for project-expanded */
+}
+
+#project-sidebar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 1rem;
+    transition: width 0.5s ease;
+}
+
+.project-preview {
+    background-color: var(--primary-color);
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s, width 0.5s ease;
+    border-radius: 6px;
+    width: 85%;
+    margin: 10px;
+    border: var(--secondary-color) solid 3px;
+}
+
+.project-preview:hover {
+    transform: scale(1.05);
+}
+
+.project-preview img {
+    width: 100%;
+    height: auto;
+    margin: 25px;
+}
+
+#project-expanded {
+    width: 40%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    overflow: auto;
+    transform: translateX(100%);
+    /* Start off-screen */
+    transition: transform 0.5s ease;
+    background-color: var(--bg-color);
+    z-index: 2;
+}
+
+.project {
+    display: none;
+}
+
+.project.active {
+    display: block;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    margin: 20px;
+}
+
+.project-text {
+    background-color: var(--secondary-color);
+    padding: 1rem;
+}
+
+.close-p-expanded {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+}

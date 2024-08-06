@@ -1,0 +1,456 @@
+/* Default theme (light mode) */
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #222;
+  --container-bg: #fff;
+  --toggle-bg: #c4c4c4;
+  --toggle-thumb-bg: #fff;
+  --dashboard-bg: #ffffffd6;
+  --hover-bg: #ddddddbb;
+  --hover-text: #bbb;
+}
+
+/* Dark mode */
+:root[data-theme='dark'] {
+  --bg-color: #222;
+  --text-color: #fff;
+  --container-bg: #333;
+  --toggle-bg: #888;
+  /* Adjust the toggle switch background color for dark mode */
+  --toggle-thumb-bg: #fff;
+  /* Adjust the toggle switch thumb color for dark mode */
+  --dashboard-bg: #555;
+  --hover-bg: #393939bb;
+  --hover-text: #2a2a2a;
+}
+
+/* Apply variables to the entire document */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+.container.full-page {
+  max-width: 100%;
+  
+  /* Full page width */
+  margin: 0
+}
+
+.container {
+  max-width: 40%;
+  background-color: var(--container-bg);
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin: 20px auto;
+  transition: background-color 0.3s;
+  /* Add gap between elements */
+  align-items: stretch;
+  /* Center child elements horizontally */
+  justify-content: center;
+  display: flex;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.theme-toggle-label {
+  margin-right: 10px;
+}
+
+.theme-toggle-checkbox {
+  width: 40px;
+  height: 20px;
+  position: relative;
+  -webkit-appearance: none;
+  background: var(--toggle-bg);
+  border-radius: 20px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.theme-toggle-checkbox::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  left: 2px;
+  top: 1px;
+  background: var(--toggle-thumb-bg);
+  transition: 0.3s;
+}
+
+.theme-toggle-checkbox:checked::before {
+  left: 20px;
+}
+
+/* Light Mode */
+.container.light {
+  background-color: #f0f0f0;
+  /* Light background color */
+  color: #222;
+  /* Text color */
+}
+
+/* Dark Mode */
+.container.dark {
+  background-color: #333;
+  /* Dark background color */
+  color: #fff;
+  /* Text color */
+}
+
+/* Toggle switch styling */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.theme-toggle-label {
+  margin-right: 10px;
+}
+
+.theme-toggle-checkbox {
+  width: 40px;
+  height: 20px;
+  position: relative;
+  -webkit-appearance: none;
+  background: #c4c4c4;
+  border-radius: 20px;
+  outline: none;
+  transition: background 0.3s;
+}
+
+.theme-toggle-checkbox::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  left: 2px;
+  top: 1px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.theme-toggle-checkbox:checked::before {
+  left: 20px;
+}
+
+input {
+  padding: 5px;
+  margin: 5px;
+  width: 75%;
+}
+
+.center {
+  text-align: center;
+}
+
+.error.light {
+  color: black;
+  background-color: rgb(207, 87, 87);
+}
+
+.success.light {
+  color: black;
+  background-color: rgb(116, 208, 116);
+
+}
+
+.error.dark {
+  color: black;
+  background-color: rgb(207, 87, 87);
+}
+
+.success.dark {
+  color: white;
+  background-color: rgb(116, 208, 116);
+
+}
+
+/* Error and Success Message Styles */
+.error,
+.success {
+  width: 75%;
+  /* Set the width to match the input boxes */
+  display: inline-block;
+  /* Display messages inline */
+  margin: 5px
+}
+
+/* Style for the submit button */
+button[type="submit"] {
+  background-color: #007bff;
+  /* Background color */
+  color: #fff;
+  /* Text color */
+  padding: 10px 20px;
+  /* Padding around the text */
+  border: none;
+  /* Remove the default button border */
+  border-radius: 4px;
+  /* Rounded corners */
+  cursor: pointer;
+  /* Cursor on hover */
+  font-size: 16px;
+  /* Font size */
+  transition: background-color 0.3s ease;
+  /* Smooth background color transition */
+  margin: 3%;
+  margin-top: 8%;
+
+  /* Add additional styles as needed */
+}
+
+/* Style for the submit button on hover */
+button[type="submit"]:hover {
+  background-color: #0056b3;
+  /* Darker background color on hover */
+}
+
+.dashboard {
+  width: 50%;
+  background: var(--dashboard-bg);
+  color: var(--text-color);
+  text-align: center; /* Center dashboard content */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.post-attachment{
+  border : 1px solid #ddd;
+  border-radius: 4px;
+}
+
+
+/* Sidebar styling */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  width: 25%;
+  text-align: center;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+
+
+/* Search bar styling */
+.search-bar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-left: auto;
+  flex: 0;
+  /* Set the flex property to 0 to make it not grow and be small */
+  margin-left: 10px;
+}
+
+/* Search input styling */
+.search-input {
+  width: 150px;
+  /* Adjust the width as needed */
+  margin-right: 10px;
+}
+
+/* Search button styling */
+.search-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+
+
+
+
+
+
+/*Toggle container, to keep it small*/
+.toggle-container {
+  width: 20%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Add this CSS in your stylesheet to align the h1 and search bar in the topbar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--container-bg); /* Match top bar's background color with the container */
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.container.dashboard{
+  border: #222 solid 2px;
+}
+
+
+button[type="button"] {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin: 10px 0; /* Increased vertical margin for separation */
+}
+
+/* Sidebar button styling */
+.sidebar-menu .sidebar-button{
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border: none;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  transition: all 1.5s ease;
+}
+
+
+/* Sidebar button hover effect */
+@keyframes gradient {
+  0% {background-position: 0% 100%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 100%;}
+}
+
+@keyframes colorChange {
+  0% {color: var(--text-color);}
+  50% {color: #c4c4c4;}
+  100% {color: var(--hover-color);}
+}
+
+/* Sidebar button styling */
+.sidebar-menu .sidebar-button:hover {
+  background-color: var(--hover-bg);
+  color: var(--hover-text);
+  background: linear-gradient(45deg, var(--hover-bg)40%, rgb(43, 40, 40)60%);
+  background-size: 500% 500%;
+  color: var(--hover-text);
+  animation: gradient 10s ease infinite, colorChange 10s ease-in-out infinite;
+}
+
+/* Sidebar link styling */
+.sidebar-menu .sidebar-link {
+  color: var(--text-color); /* Set the color same as sidebar text color */
+  text-decoration: none; /* Remove underline */
+  padding: 25px; /* Increase padding to create larger gap */
+  display: block; /* Make the link occupy the full width of the sidebar */
+  font-size: large;
+  font-weight: bold;
+}
+
+
+button[type="button"] {
+   background-color: #007bff;
+   color: #fff;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 16px;
+   transition: background-color 0.3s ease;
+   margin: 10px 0; /* Increased vertical margin for separation */
+}
+ul{
+  list-style: none;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.post-footer-left .post-button {
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--text-color);
+  color: var(--container-bg);
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.post-footer-left .post-button:hover {
+  background-color: var(--hover-bg);
+  color: var(--text-color);
+}
+
+.post-footer-left .post-button.selected {
+  background-color: var(--hover-bg);
+  color: var(--text-color);
+}
+
+.post-attachments {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.post-attachments .img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid var(--text-color);
+  border-radius: 8px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.post-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture-post {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 4px; /* Adjust spacing between username and handle */
+}
+
+.handle {
+  font-size: 0.8rem; /* Make the handle smaller */
+  color: #888; /* Make it more muted */
+}
+
+.post-attachment{
+  border : 1px solid #ddd;
+  border-radius: 4px;
+  margin: 5px;
+}
+

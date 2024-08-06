@@ -1,0 +1,96 @@
+/* settings.css */
+
+/* Default theme (light mode) */
+:root {
+    --bg-color: #f0f0f0;
+    --text-color: #222;
+    --container-bg: #fff;
+    --toggle-bg: #c4c4c4;
+    --toggle-thumb-bg: #fff;
+    --dashboard-bg: #ffffffd6;
+    --hover-bg: #ddddddbb;
+    --hover-text: #bbb;
+  }
+  
+  /* Dark mode */
+  :root[data-theme='dark'] {
+    --bg-color: #222;
+    --text-color: #fff;
+    --container-bg: #333;
+    --toggle-bg: #888;
+    /* Adjust the toggle switch background color for dark mode */
+    --toggle-thumb-bg: #fff;
+    /* Adjust the toggle switch thumb color for dark mode */
+    --dashboard-bg: #555;
+    --hover-bg: #393939bb;
+    --hover-text: #2a2a2a;
+  }
+  
+  /* Dashboard */
+  .dashboard {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .settings-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .settings-button {
+    border: none;
+    background-color: transparent;
+    color: var(--text-color);
+    padding: 10px 0;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .settings-button.active {
+    color: #222;
+  }
+  
+  .settings-button::before,
+  .settings-button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+  
+  .settings-button::before {
+    left: 0;
+    bottom: 0;
+  }
+  
+  .settings-button::after {
+    right: 0;
+    bottom: 0;
+  }
+  
+  .settings-button:hover::before,
+  .settings-button:hover::after {
+    width: 50%;
+  }
+  
+  .settings-tab-content {
+    background-color: var(--container-bg);
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  /* Setting names */
+  .setting-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .setting-name:hover {
+    color: var(--hover-text);
+  }
+  

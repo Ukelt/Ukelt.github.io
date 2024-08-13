@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projects>
+    <project>
+        <title>Ace Training</title>
+        <description>This is a project from University that was a course/education/moodle style website, where users who created an account would need to
+            accepted by an admin. Accepted users could sign up for a course, and if accepted by the courses tutor would be able to have access and see the
+            resources (quizzes, documents etc.) uploaded by the tutor. Tutors had the abilitiy to set when resources were available from and to, aswell as
+            the ability to create custom quizzes and see the scores of the users who took them.
+        </description>
+        <technologies>PHP, BootstrapCSS, JavaScript, HTML</technologies>
+        <image_url>images/project1.jpg</image_url>
+        <project_url>project1.html</project_url>
+        <project_video>VideoHere</project_video>
+    </project>
+    <project>
+        <title>Project 2</title>
+        <description>Description of project 2</description>
+        <technologies></technologies>
+        <image_url>images/project2.jpg</image_url>
+        <project_url>project2.html</project_url>
+        <project_video>VideoHere</project_video>
+    </project>
+    <project>
+        <title>Project 3</title>
+        <description>Description of project 3</description>
+        <technologies></technologies>
+        <image_url>images/project3.jpg</image_url>
+        <project_url>project3.html</project_url>
+        <project_video>VideoHere</project_video>
+    </project>
+</projects>

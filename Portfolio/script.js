@@ -1,124 +1,97 @@
 const toggleInput = document.querySelector('.theme-swap');
+const projectSidebar = document.getElementById('project-sidebar');
+const projectExpanded = document.getElementById('project-expanded');
+const card = document.querySelector('.card');
 
+// Toggle Theme
 function toggleTheme(e) {
-    let theme = e.target.value;
-    console.log(theme);
-    if (theme == 'KC') {
+    const theme = e.target.value;
+    if (theme === 'KC') {
         document.documentElement.removeAttribute('data-theme');
-        KCToDark();
     } else {
         document.documentElement.setAttribute('data-theme', theme);
-        KCToDark();
     }
 }
 
 toggleInput.addEventListener('change', toggleTheme, false);
 
-const projectPreviews = document.querySelectorAll('.project-preview');
-const projectSidebar = document.getElementById('project-sidebar');
-const projectExpanded = document.getElementById('project-expanded');
-const card = document.querySelector('.card');
-const closeProject = document.querySelector('.close-p-expanded');
-const shapesChildren = Array.from(document.querySelector('.shapes').children);
-const circle = document.querySelector('.circle');
-const circle3 = document.querySelector('.circle3');
-
-projectPreviews.forEach(preview => {
-    preview.addEventListener('click', () => {
-        // Shrink the project-sidebar and card
-        projectSidebar.style.width = '20%';
-        card.style.width = '40%';
-        if (document.documentElement.getAttribute('data-theme') == 'Dark' || document.documentElement.getAttribute('data-theme') == 'Light') {
-        shapesChildren.forEach(shape => {
-            const currentWidth = shape.clientWidth;
-            const currentHeight = shape.clientHeight;
-            shape.style.width = currentWidth * 0.3 + 'px';
-            shape.style.height = currentHeight * 1.2 + 'px';
-        });
-
-        circle.style.transform = 'translate(20%, 80%)';
-        circle3.style.transform = 'translate(-105%, -10%)';
-    }else{
-        
-    }
-
-        // Expand the project-expanded
-        projectExpanded.style.transform = 'translateX(0)';
-
-        // Show the selected project
-        const projectId = preview.getAttribute('data-project');
-        const project = document.getElementById(`project-${projectId}`);
-        document.querySelectorAll('.project').forEach(p => p.classList.remove('active'));
-        project.classList.add('active');
-    });
-});
-
-closeProject.addEventListener('click', () => {
+// Close Project
+function closeProj() {
     projectSidebar.style.width = '100%';
     card.style.width = '100%';
-    if (document.documentElement.getAttribute('data-theme') == 'Dark' || document.documentElement.getAttribute('data-theme') == 'Light') {
-
-
-        shapesChildren.forEach(shape => {
-            const currentWidth = shape.clientWidth;
-            const currentHeight = shape.clientHeight;
-            shape.style.width = currentWidth / 0.3 + 'px'; // Reverse the width change
-            shape.style.height = currentHeight / 1.2 + 'px'; // Reset the height
-        });
-
-        circle.style.transform = 'translate(0, 25%)';
-        circle3.style.transform = 'translate(-60%, 25%)';
-    } else {
-
-    }
 
     projectExpanded.style.transform = 'translateX(100%)';
-
     document.querySelectorAll('.project').forEach(p => p.classList.remove('active'));
-});
-
-
-
-function KCToDark() {
-
-    if (document.documentElement.getAttribute('data-theme') == 'Dark' || document.documentElement.getAttribute('data-theme') == 'Light') {
-        circle.style.borderRadius = '0';
-        circle3.style.borderRadius = '0';
-        circle.style.transition = 'border-radius 1s';
-        circle3.style.transition = 'border-radius 1s';
-
-        circle.style.width = '40%';
-        circle.style.height = '25%';
-        circle3.style.width = '50%';
-        circle3.style.height = '25%';
-
-        circle.style.transition = 'width 1s, height 1s, transform 1s';
-        circle.style.transform = 'translateY(25%)';
-
-        circle3.style.transition = 'width 1s, height 1s, transform 1s';
-        circle3.style.transform = 'translate(-60%, 25%)';
-    } else {
-        circle.style.borderRadius = '50%';
-        circle.style.transition = 'border-radius 1s';
-
-        circle3.style.borderRadius = '50%';
-        circle3.style.transition = 'border-radius 1s';
-
-        // Revert transformations and dimensions
-        circle.style.width = '35%';
-        circle.style.height = '70%';
-        circle3.style.width = '20%';
-        circle3.style.height = '40%';
-
-        circle.style.transform = 'translate(0, 0)';
-        circle3.style.transform = 'translate(0, 0)';
-
-
-
-        // Ensure the transitions are still smooth
-        circle.style.transition = 'width 1s, height 1s, transform 1s, border-radius 1s';
-        circle3.style.transition = 'width 1s, height 1s, transform 1s, border-radius 1s';
-    }
 }
 
+// Add event listener for closing projects
+document.getElementById('projects-container').addEventListener('click', (event) => {
+    if (event.target && event.target.classList.contains('close-p-expanded')) {
+        closeProj();
+    }
+});
 
+let counter = 1;
+
+// Fetch projects and generate HTML
+fetch('projects.xml')
+    .then(response => response.text())
+    .then(data => {
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(data, "application/xml");
+        const projects = xml.getElementsByTagName('project');
+        let projectPreviewsHtml = '';
+        let projectExpandedHtml = '';
+
+        for (let project of projects) {
+            const title = project.getElementsByTagName('title')[0].textContent;
+            const description = project.getElementsByTagName('description')[0].textContent;
+            const imageUrl = project.getElementsByTagName('image_url')[0].textContent;
+            const projectUrl = project.getElementsByTagName('project_url')[0].textContent;
+            const videoUrl = project.getElementsByTagName('project_video')[0].textContent;
+
+            // Create project preview elements
+            projectPreviewsHtml += `
+                <div>
+                    <div class="project-preview" data-project="${counter}">
+                        <img src="${imageUrl}" alt="${title}">
+                    </div>
+                    <h2 class="project-title">${title}</h2>
+                </div>`;
+
+            // Create project expanded elements
+            projectExpandedHtml += `
+                <div class="project" id="project-${counter}">
+                    <button class="close-p-expanded">Close</button>
+                    <h2>${title}</h2>
+                    <p>${description}</p>
+                    <img src="${imageUrl}" alt="${title}">
+                    <a href="${projectUrl}" target="_blank">View Project</a>
+                    <video width="320" height="240" controls>
+                        <source src="${videoUrl}" type="video/mp4">
+                    </video>
+                </div>`;
+            counter++;
+        }
+
+        // Insert generated HTML into the DOM
+        document.getElementById('project-sidebar').innerHTML = projectPreviewsHtml;
+        document.getElementById('projects-container').innerHTML = projectExpandedHtml;
+    });
+
+// Open selected project
+projectSidebar.addEventListener('click', (event) => {
+    const preview = event.target.closest('.project-preview');
+    if (preview) {
+        const projectId = preview.getAttribute('data-project');
+        const project = document.getElementById(`project-${projectId}`);
+
+        projectSidebar.style.width = '20%';
+        card.style.width = '40%';
+
+        projectExpanded.style.transform = 'translateX(0)';
+
+        document.querySelectorAll('.project').forEach(p => p.classList.remove('active'));
+        project.classList.add('active');
+    }
+});

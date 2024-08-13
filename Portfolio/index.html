@@ -6,70 +6,77 @@
     <title>Kieran Hennity Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="tab.js" defer></script>
+    <script src="https://kit.fontawesome.com/cde4ea544d.js" crossorigin="anonymous"></script>
 </head>
-<body>
-    <div class="top-bar">
-        <div class="select-container">
-        <label for="Theme" class="theme-label">Theme:</label>
-        <select name="Theme" class="theme-swap">
-            <option value="KC" selected>Kieran's Choice</option>
-            <option value="Light">Light Mode</option>
-            <option value="Dark">Dark Mode</option>
-        </select>
+    <body>
+    <header class="top-bar">
+        <div class="container">
+            <label for="Theme" class="theme-label">Theme:</label>
+            <select name="Theme" class="theme-swap">
+                <option value="KC" selected>Kieran's Choice</option>
+                <option value="Light">Light Mode</option>
+                <option value="Dark">Dark Mode</option>
+            </select>
         </div>
-    </div>
-    <div class="container">
-        <div class="shapes">
-            <div class="circle"></div>
-            <div class="circle2"></div>
-            <div class="circle3"></div>
-        </div>
-        <div class="card">
-            <div class="card-image">
-                <img src="CatOrangeEgg.png" alt="Profile Picture">
-            </div>
-            <div class="card-text">
-                <h2>Kieran Hennity</h2>
-                <br>
-                <p>Hello, and welcome to my portfolio site.
-                <br>
-                I have just graduated from Liverpool Hope University with a First Class degree in Computer Science.
-                <br>
-                My main interests are in web development and software development.</p>
-            </div>
-        </div>
-    <div id="gallery">
-        <div id="project-sidebar">
-            <div class="project-preview" data-project="1">
-                <img src="images/Project1.jpg" alt="Project 1">
-                <h2>Project 1</h2>
-            </div>
-            <div class="project-preview" data-project="1">
-                <img src="images/Project1.jpg" alt="Project 1">
-                <h2>Project 1</h2>
-            </div>
-            <div class="project-preview" data-project="1">
-                <img src="images/Project1.jpg" alt="Project 1">
-                <h2>Project 1</h2>
-            </div>
-            <!-- Add more project previews as needed -->
-        </div>
-        <div id="project-expanded">
-            <div class="project" id="project-1">
-                <button class="close-p-expanded" id="close-p-expanded">X</button>
-                <div class="project-image">
-                    <img src="images/Project1.jpg" alt="Project 1">
-                </div>
-                <div class="project-text">
-                    <h2>Project 1</h2>
-                    <p>This is a project I worked on during my time at university. It is a web application that allows users to search for and view information about films.</p>
-                    <p>It was built using HTML, CSS, JavaScript, PHP and MySQL.</p>
-                </div>
-            </div>
-            <!-- Add more expanded project details as needed -->
-        </div>
-    </div>
-</div>
+    </header>
 
+    <main class="container">
+        <section class="intro">
+            <div class="shapes">
+                <div class="circle"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="CatOrangeEgg.png" alt="Profile Picture">
+                </div>
+                <div class="card-text">
+                    <h1>Kieran Hennity</h1>
+                    <p>Hello, and welcome to my portfolio site.
+                        <br>I have just graduated from Liverpool Hope University with a First Class degree in Computer Science.
+                        <br>My main interests are in web development and software development.
+                    </p>
+                    <a href="https://www.linkedin.com/in/kieran-hennity-33467731a/" target="_blank" class="linkedin-link">
+                        <i class="fa-brands fa-linkedin"></i>
+                        &nbsp;Kieran Hennity
+                    </a>
+                </div>
+            </div>
+        </section>
+    
+
+        <section id="gallery">
+            <div class="tab-navigation">
+                <button class="tab-arrow left-arrow">&#9664;</button>
+                <span class="tab-name">Projects</span>
+                <button class="tab-arrow right-arrow">&#9654;</button>
+                <div class="tab-content">
+                    <div class="tab-panel" id="projects-panel">
+            <h2>University Projects</h2>
+
+            <aside id="project-sidebar">
+            </aside>
+            <div id="project-expanded">
+                <div id="projects-container">
+
+                </div>
+                <div class="tab-panel" id="contact-panel">
+                    <h2>Contact Me</h2>
+                    <form id="contact-form">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+            
+        </section>
+    </main>
 </body>
 </html>

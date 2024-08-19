@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kieran Hennity Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-    <script src="tab.js" defer></script>
+    <script src="tab2.js" defer></script>
     <script src="https://kit.fontawesome.com/cde4ea544d.js" crossorigin="anonymous"></script>
 </head>
-    <body>
+
+<body>
     <header class="top-bar">
         <div class="container">
             <label for="Theme" class="theme-label">Theme:</label>
@@ -28,6 +30,16 @@
                 <div class="circle2"></div>
                 <div class="circle3"></div>
             </div>
+            <div class="glass">
+                <button class="nextArrow arrow"><i class="fa-solid fa-chevron-up"></i></button>
+                <div class="glass-content">
+                    <div class="glass-option" id="optionBefore"></div>
+                    <div class="glass-option" id="optionSelected"></div>
+                    <div class="glass-option" id="optionAfter"></div>
+                    <div class="glass-option" id="optionAfterAfter"></div>
+                </div>
+                <button class="beforeArrow arrow"><i class="fa-solid fa-chevron-down"></i></button>
+            </div>
             <div class="card">
                 <div class="card-image">
                     <img src="CatOrangeEgg.png" alt="Profile Picture">
@@ -35,17 +47,19 @@
                 <div class="card-text">
                     <h1>Kieran Hennity</h1>
                     <p>Hello, and welcome to my portfolio site.
-                        <br>I have just graduated from Liverpool Hope University with a First Class degree in Computer Science.
+                        <br>I have just graduated from Liverpool Hope University with a First Class degree in Computer
+                        Science.
                         <br>My main interests are in web development and software development.
                     </p>
-                    <a href="https://www.linkedin.com/in/kieran-hennity-33467731a/" target="_blank" class="linkedin-link">
+                    <a href="https://www.linkedin.com/in/kieran-hennity-33467731a/" target="_blank"
+                        class="linkedin-link">
                         <i class="fa-brands fa-linkedin"></i>
                         &nbsp;Kieran Hennity
                     </a>
                 </div>
             </div>
         </section>
-    
+
 
         <section id="gallery">
             <div class="tab-navigation">
@@ -54,29 +68,30 @@
                 <button class="tab-arrow right-arrow">&#9654;</button>
                 <div class="tab-content">
                     <div class="tab-panel" id="projects-panel">
-            <h2>University Projects</h2>
+                        <h2>University Projects</h2>
 
-            <aside id="project-sidebar">
-            </aside>
-            <div id="project-expanded">
-                <div id="projects-container">
+                        <aside id="project-sidebar">
+                        </aside>
+                        <div id="project-expanded">
+                            <div id="projects-container">
 
-                </div>
-                <div class="tab-panel" id="contact-panel">
-                    <h2>Contact Me</h2>
-                    <form id="contact-form">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" required></textarea>
-                        <button type="submit">Send</button>
-                    </form>
-                </div>
-            </div>
-            
+                            </div>
+                            <div class="tab-panel" id="contact-panel">
+                                <h2>Contact Me</h2>
+                                <form id="contact-form">
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="name" required>
+                                    <label for="email">Email:</label>
+                                    <input type="email" id="email" name="email" required>
+                                    <label for="message">Message:</label>
+                                    <textarea id="message" name="message" required></textarea>
+                                    <button type="submit">Send</button>
+                                </form>
+                            </div>
+                        </div>
+
         </section>
     </main>
 </body>
+
 </html>

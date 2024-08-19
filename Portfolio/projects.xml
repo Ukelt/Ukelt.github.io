@@ -9,23 +9,23 @@
         </description>
         <technologies>PHP, BootstrapCSS, JavaScript, HTML</technologies>
         <image_url>images/project1.jpg</image_url>
-        <project_url>project1.html</project_url>
-        <project_video>VideoHere</project_video>
+        <project_url>https://github.com/Ukelt/Portfolio/tree/main/AceTraining/LoginTest</project_url>
     </project>
     <project>
-        <title>Project 2</title>
-        <description>Description of project 2</description>
-        <technologies></technologies>
+        <title>SociArt</title>
+        <description>A social media like app. An app that is supposed to support more collaborative art work, and with a bigger push towards an art based 
+            social media website. Users can post like you would on a normal social media website, including uploading up to 4 media posts, but they can also
+            create a room which has a HTML5 canvas they can draw in, and then post it. Users can also comment on posts, and like them. 
+        </description>
+        <technologies>React, Nodejs, HTML, JavaScript, CSS</technologies>
         <image_url>images/project2.jpg</image_url>
-        <project_url>project2.html</project_url>
-        <project_video>VideoHere</project_video>
+        <project_url>https://github.com/Ukelt/SociArt</project_url>
     </project>
     <project>
-        <title>Project 3</title>
-        <description>Description of project 3</description>
-        <technologies></technologies>
-        <image_url>images/project3.jpg</image_url>
-        <project_url>project3.html</project_url>
-        <project_video>VideoHere</project_video>
+        <title>HabitTracker</title>
+        <description>An android app for keeping tracks of habits, uses a daily, weekly a monthly approach, allows custom creation of habits, and lets user delete them. </description>
+        <technologies>Java</technologies>
+        <image_url>images/project2.jpg</image_url>
+        <project_url>https://github.com/Ukelt/HabitTracker</project_url>
     </project>
 </projects>

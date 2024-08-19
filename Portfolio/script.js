@@ -48,7 +48,6 @@ fetch('projects.xml')
             const description = project.getElementsByTagName('description')[0].textContent;
             const imageUrl = project.getElementsByTagName('image_url')[0].textContent;
             const projectUrl = project.getElementsByTagName('project_url')[0].textContent;
-            const videoUrl = project.getElementsByTagName('project_video')[0].textContent;
 
             // Create project preview elements
             projectPreviewsHtml += `
@@ -67,9 +66,6 @@ fetch('projects.xml')
                     <p>${description}</p>
                     <img src="${imageUrl}" alt="${title}">
                     <a href="${projectUrl}" target="_blank">View Project</a>
-                    <video width="320" height="240" controls>
-                        <source src="${videoUrl}" type="video/mp4">
-                    </video>
                 </div>`;
             counter++;
         }

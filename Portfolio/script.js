@@ -17,10 +17,7 @@ toggleInput.addEventListener('change', toggleTheme, false);
 
 // Close Project
 function closeProj() {
-    projectSidebar.style.width = '100%';
-    card.style.width = '100%';
-
-    projectExpanded.style.transform = 'translateX(100%)';
+    projectExpanded.style.transform = 'translateX(-100%)';
     document.querySelectorAll('.project').forEach(p => p.classList.remove('active'));
 }
 
@@ -81,9 +78,6 @@ projectSidebar.addEventListener('click', (event) => {
     if (preview) {
         const projectId = preview.getAttribute('data-project');
         const project = document.getElementById(`project-${projectId}`);
-
-        projectSidebar.style.width = '20%';
-        card.style.width = '40%';
 
         projectExpanded.style.transform = 'translateX(0)';
 

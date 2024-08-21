@@ -14,13 +14,16 @@
 <body>
     <header class="top-bar">
         <div class="container">
-            <label for="Theme" class="theme-label">Theme:</label>
             <select name="Theme" class="theme-swap">
-                <option value="KC" selected>Kieran's Choice</option>
+                <option value="KC" selected>Kieran's Theme</option>
                 <option value="Light">Light Mode</option>
                 <option value="Dark">Dark Mode</option>
             </select>
-            <h1>Work in Progress</h1>
+            <nav>
+                <ul>
+                    <li><a href="#gallery">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
         </div>
     </header>
 
@@ -30,16 +33,6 @@
                 <div class="circle"></div>
                 <div class="circle2"></div>
                 <div class="circle3"></div>
-            </div>
-            <div class="glass">
-                <button class="nextArrow arrow"><i class="fa-solid fa-chevron-up"></i></button>
-                <div class="glass-content">
-                    <div class="glass-option" id="optionBefore"></div>
-                    <div class="glass-option" id="optionSelected"></div>
-                    <div class="glass-option" id="optionAfter"></div>
-                    <div class="glass-option" id="optionAfterAfter"></div>
-                </div>
-                <button class="beforeArrow arrow"><i class="fa-solid fa-chevron-down"></i></button>
             </div>
             <div class="card">
                 <div class="card-image">
@@ -63,10 +56,6 @@
 
 
         <section id="gallery">
-            <div class="tab-navigation">
-                <button class="tab-arrow left-arrow">&#9664;</button>
-                <span class="tab-name">Projects</span>
-                <button class="tab-arrow right-arrow">&#9654;</button>
                 <div class="tab-content">
                     <div class="tab-panel" id="projects-panel">
                         <h2>University Projects</h2>
@@ -75,21 +64,10 @@
                         </aside>
                         <div id="project-expanded">
                             <div id="projects-container">
-
-                            </div>
-                            <div class="tab-panel" id="contact-panel">
-                                <h2>Contact Me</h2>
-                                <form id="contact-form">
-                                    <label for="name">Name:</label>
-                                    <input type="text" id="name" name="name" required>
-                                    <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" required>
-                                    <label for="message">Message:</label>
-                                    <textarea id="message" name="message" required></textarea>
-                                    <button type="submit">Send</button>
-                                </form>
-                            </div>
+                                </div>
                         </div>
+                    </div>
+
 
         </section>
     </main>

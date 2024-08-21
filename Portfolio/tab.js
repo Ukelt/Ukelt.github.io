@@ -1,25 +1,20 @@
-// script.js
-let tabs = ['Projects', 'Contact'];
-document.addEventListener('DOMContentLoaded', () => {
-    const tabContent = document.querySelector('.tab-content');
-    const tabPanels = document.querySelectorAll('.tab-panel');
-    const tabName = document.querySelector('.tab-name');
-    let index = 0;
+document.querySelectorAll('.glass-option').forEach(option => {
+    option.addEventListener('click', function() {
+        const selectedOptionId = this.id;
 
-    function updateTabContent() {
-        tabContent.style.transform = `translateX(-${index * 100}%)`;
-        tabName.textContent = tabs[index];
-    }
+        if (selectedOptionId === 'optionSelected') {
+            // If the contact form is selected, bring it onscreen
+            document.getElementById('contact-panel').classList.add('visible');
 
-    document.querySelector('.left-arrow').addEventListener('click', () => {
-        index = (index > 0) ? index - 1 : tabPanels.length - 1;
-        updateTabContent();
+            // Hide the projects panel or any other content
+            document.getElementById('projects-panel').classList.remove('visible');
+        } else {
+            // If a non-contact option is selected, hide the contact panel
+            document.getElementById('contact-panel').classList.remove('visible');
+
+            // Show the projects panel or whatever should be displayed
+            document.getElementById('projects-panel').classList.add('visible');
+        }
     });
-
-    document.querySelector('.right-arrow').addEventListener('click', () => {
-        index = (index < tabPanels.length - 1) ? index + 1 : 0;
-        updateTabContent();
-    });
-
-    updateTabContent(); // Initialize tab content
 });
+

@@ -1,6 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector('form');
+    const toggleInput = document.querySelector('.theme-swap');
 
+    function toggleTheme(e) {
+      const theme = e.target.value;
+      if (theme === 'KC') {
+          document.documentElement.removeAttribute('data-theme');
+      } else {
+          document.documentElement.setAttribute('data-theme', theme);
+      }
+  }
+
+  toggleInput.addEventListener('change', toggleTheme, false);
+    
     form.addEventListener('submit', function(event) {
         // Prevent the default form submission
         event.preventDefault();

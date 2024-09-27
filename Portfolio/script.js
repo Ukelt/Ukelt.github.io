@@ -84,3 +84,4 @@ projectSidebar.addEventListener('click', (event) => {
         project.classList.add('active');
     }
 });
+

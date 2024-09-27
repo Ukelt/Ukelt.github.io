@@ -13,6 +13,7 @@
   --secondary-color: #606062;
   --font-color: #e1e1ff;
   --bg-color: #141421;
+  --bg-secondary: #242430;
   --heading-color: #818cab;
   --card-bg-color: #1c1c28;
 }
@@ -22,6 +23,7 @@
   --secondary-color: #c0c0c0;
   --font-color: #1a1a1a;
   --bg-color: #ffffff;
+  --bg-secondary: #f7f7f7;
   --heading-color: #333333;
   --card-bg-color: #ffffff;
 }

@@ -45,6 +45,7 @@ fetch('projects.xml')
             const description = project.getElementsByTagName('description')[0].textContent;
             const imageUrl = project.getElementsByTagName('image_url')[0].textContent;
             const projectUrl = project.getElementsByTagName('project_url')[0].textContent;
+            const technologies = project.getElementsByTagName('technologies')[0].textContent;
 
             // Create project preview elements
             projectPreviewsHtml += `
@@ -52,16 +53,17 @@ fetch('projects.xml')
                     <div class="project-preview" data-project="${counter}">
                         <img src="${imageUrl}" alt="${title}">
                     </div>
-                    <h2 class="project-title">${title}</h2>
+                    <h3 class="project-title">${title}</h2>
                 </div>`;
 
             // Create project expanded elements
             projectExpandedHtml += `
                 <div class="project" id="project-${counter}">
                     <button class="close-p-expanded">Close</button>
-                    <h2>${title}</h2>
+                    <h3>${title}</h2>
                     <p>${description}</p>
-                    <img src="${imageUrl}" alt="${title}">
+                    <img src="${imageUrl}" alt="${title}`+` Image(s)">
+                    <p>Tech Stack: ${technologies}</p>
                     <a href="${projectUrl}" target="_blank">View Project</a>
                 </div>`;
             counter++;
@@ -78,7 +80,7 @@ projectSidebar.addEventListener('click', (event) => {
     if (preview) {
         const projectId = preview.getAttribute('data-project');
         const project = document.getElementById(`project-${projectId}`);
-        projectExpanded.style.transform = 'translateX(106%)';
+        projectExpanded.style.transform = 'translateX(105%)';
 
         document.querySelectorAll('.project').forEach(p => p.classList.remove('active'));
         project.classList.add('active');

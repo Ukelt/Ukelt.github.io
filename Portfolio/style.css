@@ -89,7 +89,15 @@ nav ul li a:hover {
   color: var(--secondary-color);
 }
 
+.nav-link::before {
+  content: " ";
+  margin-right: 0.5rem;
+  width: 10px;
+  height: 10px;
+}
+
 .theme-swap {
+  width: 20%;
   border: none;
   background-color: var(--primary-color);
   color: var(--font-color);
@@ -103,6 +111,20 @@ nav ul li a:hover {
 .theme-swap:hover {
   background-color: var(--secondary-color);
 }
+
+.theme-swap-wrapper:before {
+  content: " ";
+  margin-right: 0.5rem;
+  background-color: var(--font-color);
+  display: block;
+  
+}
+
+.theme-swap-wrapper:hover:before {
+  animation: border 5s infinite;
+}
+
+
 
 .top-container {
   display: flex;
@@ -143,61 +165,6 @@ nav ul li a:hover {
   height: 100px;
   position: relative;
 }
-
-.glass-option-selected{
-  background-color: var(--secondary-color);
-  color: var(--font-color);
-}
-
-.selectedHighlight {
-  background-color: var(--primary-color);
-  color: var(--font-color);
-  border-radius: 16px;
-}
-
-.arrow {
-  width: 15%;
-  justify-items: center;
-  align-content: center;
-  background-color: var(--primary-color);
-}
-
-.slide-up,
-.slide-down {
-  animation-duration: 0.3s;
-  animation-timing-function: ease;
-}
-
-.slide-up {
-  animation-name: slideUp;
-}
-
-.slide-down {
-  animation-name: slideDown;
-}
-
-@keyframes slideUp {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(-30px);
-    /* Adjust based on .glass-option height */
-  }
-}
-
-@keyframes slideDown {
-  0% {
-    transform: translateY(0);
-  }
-
-  100% {
-    transform: translateY(30px);
-    /* Adjust based on .glass-option height */
-  }
-}
-
 
 .intro {
   display: flex;
@@ -323,9 +290,14 @@ nav ul li a:hover {
 #gallery {
   display: flex;
   flex-direction: column;
+  flex-basis: 100%;
   margin-top: 3rem;
   background-color: var(--bg-secondary);
   padding: 5%;
+}
+
+#gallery h2{
+  font-size: 2rem;
 }
 
 #project-sidebar {
@@ -334,6 +306,10 @@ nav ul li a:hover {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
   padding: 1rem 0;
+}
+
+.project-title{
+  text-align: center;
 }
 
 .project-preview {
@@ -468,9 +444,19 @@ nav ul li a:hover {
     text-align: center;
   }
 
+  #project-expanded{
+    padding: 10px;
+  }
+
   .shapes .circle,
   .shapes .circle2,
   .shapes .circle3 {
     display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  #project-expanded{
+    padding: 5px;
   }
 }

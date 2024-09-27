@@ -21,7 +21,7 @@ fetch('projects.xml')
             const videoUrl = project.getElementsByTagName('project_video')[0].textContent;
             html += `<div class="project" id="project-${counter}">
                         <button class="close-p-expanded">Close</button>
-                        <h2>${title}</h2>
+                        <h3 class="project-title">${title}</h2>
                         <p>${description}</p>
                         <img src="${imageUrl}" alt="${title}">
                         <a href="${projectUrl}">View Project</a>

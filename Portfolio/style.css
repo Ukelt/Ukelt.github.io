@@ -3,6 +3,7 @@
   --secondary-color: #f889c6;
   --font-color: #030000;
   --bg-color: #fff;
+  --bg-secondary: #f7f7f7;
   --heading-color: #292922;
   --card-bg-color: #ffffff;
 }
@@ -321,6 +322,8 @@ nav ul li a:hover {
   display: flex;
   flex-direction: column;
   margin-top: 3rem;
+  background-color: var(--bg-secondary);
+  padding: 5%;
 }
 
 #project-sidebar {
@@ -369,6 +372,7 @@ nav ul li a:hover {
   transform: translateY(100%);
   transition: transform 0.5s ease;
   position: relative;
+  left: -110%;
 }
 
 .project {

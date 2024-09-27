@@ -78,8 +78,7 @@ projectSidebar.addEventListener('click', (event) => {
     if (preview) {
         const projectId = preview.getAttribute('data-project');
         const project = document.getElementById(`project-${projectId}`);
-
-        projectExpanded.style.transform = 'translateX(0)';
+        projectExpanded.style.transform = 'translateX(106%)';
 
         document.querySelectorAll('.project').forEach(p => p.classList.remove('active'));
         project.classList.add('active');

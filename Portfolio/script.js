@@ -46,12 +46,13 @@ fetch('projects.xml')
             const imageUrl = project.getElementsByTagName('image_url')[0].textContent;
             const projectUrl = project.getElementsByTagName('project_url')[0].textContent;
             const technologies = project.getElementsByTagName('technologies')[0].textContent;
+            const summary = project.getElementsByTagName('summary')[0].textContent;
 
             // Create project preview elements
             projectPreviewsHtml += `
                 <div>
-                    <div class="project-preview" data-project="${counter}">
-                        <img src="${imageUrl}" alt="${title}">
+                    <div class="project-preview" data-project="${counter}" projectSummary="${summary}">
+                        <img class="preview-img" src="${imageUrl}" alt="${title}">
                     </div>
                     <h3 class="project-title">${title}</h2>
                 </div>`;
@@ -62,8 +63,8 @@ fetch('projects.xml')
                     <button class="close-p-expanded">Close</button>
                     <h3>${title}</h2>
                     <p>${description}</p>
-                    <img src="${imageUrl}" alt="${title}`+` Image(s)">
-                    <p>Tech Stack: ${technologies}</p>
+                  ` // <img src="${imageUrl}" alt="${title}`+` Image(s)"> 
+                 + `  <p>Tech Stack: ${technologies}</p>
                     <a href="${projectUrl}" target="_blank">View Project</a>
                 </div>`;
             counter++;

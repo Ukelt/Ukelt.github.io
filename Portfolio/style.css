@@ -313,6 +313,7 @@ nav ul li a:hover {
 }
 
 .project-preview {
+  position: relative;
   background-color: var(--card-bg-color);
   padding: 1rem;
   text-align: center;
@@ -320,11 +321,10 @@ nav ul li a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 10px;
   border: 2px solid var(--secondary-color);
+  overflow: hidden;
 }
 
 .project-preview img {
-  width: 100%;
-  height: auto;
   border-radius: 10px;
   margin-bottom: 0.5rem;
 }
@@ -338,6 +338,38 @@ nav ul li a:hover {
 .project-preview:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.preview-img{
+  position: relative;
+  max-height: 200px;
+  min-height: 200px;
+  max-width: 100%;
+  filter: grayscale(100%);
+}
+
+.project-preview:hover .preview-img, .project-preview:focus .preview-img{
+  filter: grayscale(0%);
+}
+
+.project-preview:after{
+  content: attr(ProjectSummary);
+  position: absolute;
+  width: 100%;
+  height: 0%;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: var(--bg-color);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-preview:hover:after{
+  height: 20%;
+  transition: height 0.5s ease;
 }
 
 #project-expanded {
